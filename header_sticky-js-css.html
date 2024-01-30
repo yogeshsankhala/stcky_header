@@ -41,5 +41,17 @@
     	});
 	</script>
 
+
+
+<!-- 	wordpress elementer without pro template how to show and create short code  -->
+<!-- 	function.php ye code add karna hai  -->
+	
+	function my_elementor_template_shortcode($atts) {
+	    ob_start();
+	    echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( 56 );
+	    return ob_get_clean();
+	}
+	add_shortcode('my_elementor_template', 'my_elementor_template_shortcode');
+	
 </body>
 </html>
