@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Header Sticky Js and CSS</title>
+
+
+
+
+	<style>
+		.sticky-header {
+		    animation: slideDown 1s ease-out;
+			position: fixed;
+			top:0;
+			width: 100%;
+			z-index: 999;
+		}
+
+		@keyframes slideDown {
+		  from {
+		    transform: translateY(-100%);
+		  }
+		  to {
+		    transform: translateY(0);
+		  }
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+		jQuery(document).ready(function(){
+    	    jQuery(window).scroll(function() {
+        		if (jQuery(this).scrollTop() > 500) {
+        			jQuery('header').addClass("sticky-header");
+        		} else {
+        			jQuery('header').removeClass("sticky-header");
+        		}
+        	});
+    	});
+	</script>
+
+</body>
+</html>
